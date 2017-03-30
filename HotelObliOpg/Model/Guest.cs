@@ -15,5 +15,12 @@ namespace HotelObliOpg.Model
 
         
         public string Address { get; set; }
+
+        public Guest(int Guest_No, string Name, string Address)
+        {
+            this.Guest_No = Guest_No;
+            this.Name = Name;
+            this.Address = Address;
+        }
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HotelObliOpg.ViewModel;
+using HotelObliOpg.Model;
 
 namespace HotelObliOpg.Handler
 {
@@ -19,6 +20,7 @@ namespace HotelObliOpg.Handler
         public CreateGuest()
         {
             Guest tempGuest = new Guest(GuestViewModel.Guest_No, GuestViewModel.Name, GuestViewModel.Address);
+            
         }
     }
 }

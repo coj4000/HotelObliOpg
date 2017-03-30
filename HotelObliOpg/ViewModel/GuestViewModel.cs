@@ -16,10 +16,40 @@ namespace HotelObliOpg.ViewModel
         public ICommand DeleteGuestCommand { get; set; }
         public ICommand UpdateGuestCommand { get; set; }
 
+        private int guest_no;
 
-        public int Guest_No { get; set; }
-        public string Name { get; set; }
-        public string Address { get; set; }
+        public int Guest_No
+        {
+            get { return guest_no; }
+            set
+            {
+                guest_no = value;
+                OnPropertyChanged(nameof(Guest_No));
+            }
+        }
+
+        private string name;
+        public string Name
+        {
+            get { return name; }
+            set
+            {
+                name = value;
+                OnPropertyChanged(nameof(Name));
+            }
+        }
+
+        private string address;
+
+        public string Address
+        {
+            get { return address; }
+            set
+            {
+                address = value;
+                OnPropertyChanged(nameof(Address));
+            }
+        }
 
         public GuestViewModel()
         {
@@ -27,6 +57,9 @@ namespace HotelObliOpg.ViewModel
             DeleteGuestCommand = new RelayCommand(DeleteGuest, CanDeleteGuest);
             UpdateGuestCommand = new RelayCommand(UpdateGuest, CanUpdateGuest);
         }
-            
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }
