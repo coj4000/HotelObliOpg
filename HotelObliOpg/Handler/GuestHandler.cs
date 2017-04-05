@@ -17,9 +17,19 @@ namespace HotelObliOpg.Handler
             this.GuestViewModel = gvm;
         }
 
-        public CreateGuest()
+        public void CreateGuest()
         {
             Guest tempGuest = new Guest(GuestViewModel.Guest_No, GuestViewModel.Name, GuestViewModel.Address);
+            
+        }
+
+        public void DeleteGuest()
+        {
+            
+        }
+
+        public void UpdateGuest()
+        {
             
         }
     }

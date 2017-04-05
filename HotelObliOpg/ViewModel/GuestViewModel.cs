@@ -9,7 +9,7 @@ using HotelObliOpg.Common;
 
 namespace HotelObliOpg.ViewModel
 {
-    class GuestViewModel : INotifyPropertyChanged
+    public class GuestViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public ICommand CreateGuestCommand { get; set; }
@@ -53,9 +53,9 @@ namespace HotelObliOpg.ViewModel
 
         public GuestViewModel()
         {
-            CreateGuestCommand = new RelayCommand(CreateGuest, null);
-            DeleteGuestCommand = new RelayCommand(DeleteGuest, CanDeleteGuest);
-            UpdateGuestCommand = new RelayCommand(UpdateGuest, CanUpdateGuest);
+            //CreateGuestCommand = new RelayCommand(CreateGuest, null);
+            //DeleteGuestCommand = new RelayCommand(DeleteGuest, CanDeleteGuest);
+            //UpdateGuestCommand = new RelayCommand(UpdateGuest, CanUpdateGuest);
         }
         protected virtual void OnPropertyChanged(string propertyName)
         {

@@ -38,8 +38,10 @@ namespace HotelObliOpg.Persistency
                 catch (Exception e)
                 {
 
-
+                    return null;
                 }
+
+                return null;
             }
         }
     }
