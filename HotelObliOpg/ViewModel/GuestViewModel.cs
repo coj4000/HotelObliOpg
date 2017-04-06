@@ -114,7 +114,7 @@ namespace HotelObliOpg.ViewModel
             DeleteGuestCommand = new RelayCommand(gh.DeleteGuest, CanDeleteGuest);          
             UpdateGuestCommand = new RelayCommand(gh.UpdateGuest, null);
 
-         //   GetGuestCommand = new RelayCommand(gh.LoadGuestsAsync, null);
+         //   1GetGuestCommand = new RelayCommand(gh.LoadGuestsAsync, null);
             
             
             
