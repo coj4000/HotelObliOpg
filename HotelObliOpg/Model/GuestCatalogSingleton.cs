@@ -4,19 +4,22 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HotelObliOpg.Persistency;
 
 namespace HotelObliOpg.Model
 {
-    class GuestCatalogSingleton
+   public class GuestCatalogSingleton
     {
         private ObservableCollection<Guest> guests;
 
-        public ObservableCollection<Guest> Guests
+        public ObservableCollection<Guest> GuestsCollection 
         {
             get { return guests; }
             set { guests = value; }
 
         }
+
+        
 
         private static GuestCatalogSingleton instance;
 
@@ -33,6 +36,49 @@ namespace HotelObliOpg.Model
 
         }
 
+        
+
+        public GuestCatalogSingleton()
+        {
+            GuestsCollection = new ObservableCollection<Guest>();
+            GetGuestsAsync();
+
+        }
+
+        //post
+        public void AddGuest(Guest GAdd)
+        {
+            GuestsCollection.Add(GAdd);
+            PersistencyService.CreateGuestAsync(GAdd);
+        }
+
+        //delete
+        public void RemoveGuest(Guest GRemove)
+        {
+            GuestsCollection.Remove(GRemove);
+           // PersistencyService
+        }
+
+        // read
+        public async Task GetGuestsAsync()
+        { 
+            foreach (var item in await PersistencyService.GetGuestsAsync())
+            {
+                this.GuestsCollection.Add(item);
+            }
+
+    }
+
+            
+        
+        //put
+        public void UpdateGuest(int guest_no, Guest newGuest)
+        {
+            
+        }
+
+        
+        
 
     }
 }

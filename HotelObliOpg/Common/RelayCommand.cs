@@ -8,7 +8,7 @@ using Windows.UI.Xaml;
 
 namespace HotelObliOpg.Common
 {
-    class RelayCommand : ICommand
+   public class RelayCommand : ICommand
     {
         private Action _execute;
         private Func<bool> _canExecute;

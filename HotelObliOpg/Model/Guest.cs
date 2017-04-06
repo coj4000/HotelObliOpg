@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HotelObliOpg.Model
 {
-    class Guest
+   public class Guest
     {
         public int Guest_No { get; set; }
 
