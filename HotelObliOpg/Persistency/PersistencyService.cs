@@ -20,31 +20,31 @@ namespace HotelObliOpg.Persistency
         const string serverUrl = "http://localhost:36179/";
 
 
-        public static async Task<List<Guest>> GetAllGuestAsync()
-        {
-            using (var client = new HttpClient())
-            {
-                client.BaseAddress = new Uri(serverUrl);
-                client.DefaultRequestHeaders.Clear();
-                string urlstring = "api/Guests";
-                try
-                {
-                    var response = await client.GetAsync(urlstring);
-                    if (response.IsSuccessStatusCode)
-                    {
-                        var guestList = await response.Content.ReadAsAsync<List<Guest>>();
+        //public static async Task<List<Guest>> GetAllGuestAsync()
+        //{
+        //    using (var client = new HttpClient())
+        //    {
+        //        client.BaseAddress = new Uri(serverUrl);
+        //        client.DefaultRequestHeaders.Clear();
+        //        string urlstring = "api/Guests";
+        //        try
+        //        {
+        //            var response = await client.GetAsync(urlstring);
+        //            if (response.IsSuccessStatusCode)
+        //            {
+        //                var guestList = await response.Content.ReadAsAsync<List<Guest>>();
 
-                        return guestList;
-                    }
-                    return null;
-                }
-                catch (Exception e)
-                {
-                    MessageDialog exception = new MessageDialog(e.Message);
-                    return null;
-                }
-            }
-        }
+        //                return guestList;
+        //            }
+        //            return null;
+        //        }
+        //        catch (Exception e)
+        //        {
+        //            MessageDialog exception = new MessageDialog(e.Message);
+        //            return null;
+        //        }
+        //    }
+        //}
 
 
         public static async Task<ObservableCollection<Guest>> GetGuestsAsync()
@@ -76,7 +76,7 @@ namespace HotelObliOpg.Persistency
                 return TempGuestsCollection;
             }
 
-            
+
         }
 
         public static void CreateGuestAsync(Guest newGuests)
@@ -108,5 +108,48 @@ namespace HotelObliOpg.Persistency
             }
 
         }
+
+        public static void DeleteGuestAsync(Guest GuestDelete)
+        {
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(serverUrl);
+                client.DefaultRequestHeaders.Clear();
+                string urlString = "api/guests/" + GuestDelete.Guest_No.ToString();
+
+                try
+                {
+                    var response = client.DeleteAsync(urlString).Result;
+
+                }
+                catch (Exception e)
+                {
+                    MessageDialog guestdelete = new MessageDialog("delete guest falied" + e);
+                }
+
+            }
+        }
+
+        public static void UpdateGetGuest(Guest GuestUpdate)
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(serverUrl);
+                client.DefaultRequestHeaders.Clear();
+                string urlString = "api/guests/" + GuestUpdate.Guest_No.ToString();
+                try
+                {
+                    
+
+                }
+                catch (Exception)
+                {
+                     
+                    throw;
+                }
+            }
+        }
     }
+
 }

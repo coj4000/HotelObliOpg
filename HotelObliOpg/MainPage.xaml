@@ -13,10 +13,10 @@
             <ViewModel:GuestViewModel/>
         </Grid.DataContext>
         <Button x:Name="button" Content="Opret Gæst" HorizontalAlignment="Left" Margin="468,251,0,0" VerticalAlignment="Top" Command="{Binding CreateGuestCommand}"/>
-        <ListView x:Name="listView" HorizontalAlignment="Left" Height="134" Margin="77,52,0,0" VerticalAlignment="Top" Width="230" ItemsSource="{Binding GuestCollection, Mode=TwoWay}" SelectedItem="{Binding SelectedGuest, Mode=TwoWay}"/>
-        <Button x:Name="button1" Content="Slet" HorizontalAlignment="Left" Margin="181,238,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="button2" Content="Rediger" HorizontalAlignment="Left" Margin="77,233,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="button3" Content="Hent Gæst" HorizontalAlignment="Left" Margin="286,235,0,0" VerticalAlignment="Top" Command="{Binding GetGuestCommand, Mode=TwoWay}"/>
+        <ListView x:Name="listView" HorizontalAlignment="Left" Height="193" Margin="77,52,0,0" VerticalAlignment="Top" Width="300" ItemsSource="{Binding GuestCollection, Mode=TwoWay}" SelectedItem="{Binding SelectedGuest, Mode=TwoWay}"/>
+        <Button x:Name="button1" Content="Slet" HorizontalAlignment="Left" Margin="181,290,0,0" VerticalAlignment="Top" Command="{Binding DeleteGuestCommand, Mode=TwoWay}"/>
+        <Button x:Name="button2" Content="Rediger" HorizontalAlignment="Left" Margin="77,289,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="button3" Content="Hent Gæst" HorizontalAlignment="Left" Margin="286,291,0,0" VerticalAlignment="Top" Command="{Binding GetGuestCommand, Mode=TwoWay}"/>
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="481,52,0,0" TextWrapping="Wrap" Text="{Binding Guest_No, Mode=TwoWay}" VerticalAlignment="Top" PlaceholderText="Guest_No"/>
         <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="481,115,0,0" TextWrapping="Wrap" Text="{Binding Name, Mode=TwoWay}" VerticalAlignment="Top" PlaceholderText="Name"/>
         <TextBox x:Name="textBox2" HorizontalAlignment="Left" Margin="481,178,0,0" TextWrapping="Wrap" Text="{Binding Address, Mode=TwoWay}" VerticalAlignment="Top" PlaceholderText="Address"/>

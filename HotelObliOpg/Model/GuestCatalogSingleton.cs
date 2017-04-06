@@ -52,11 +52,11 @@ namespace HotelObliOpg.Model
             PersistencyService.CreateGuestAsync(GAdd);
         }
 
-        //delete
+        //delete    
         public void RemoveGuest(Guest GRemove)
         {
             GuestsCollection.Remove(GRemove);
-           // PersistencyService
+            PersistencyService.DeleteGuestAsync(GRemove);
         }
 
         // read
@@ -75,7 +75,7 @@ namespace HotelObliOpg.Model
         //put
         public void UpdateGuest(int guest_no, Guest newGuest)
         {
-            
+            PersistencyService.UpdateGetGuest(guest_no, newGuest);
         }
 
         
