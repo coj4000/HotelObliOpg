@@ -45,11 +45,11 @@ namespace HotelObliOpg.Handler
             GuestCatalogSingleton.Instance.UpdateGuest(GuestViewModel.Guest_No, GuestViewModel.SelectedGuest);
         }
 
-        //public async void GetGuest()
-        //{
-        //    await GuestCatalogSingleton.Instance.GetGuestsAsync();
-        //}
+        public async void GetGuest()
+        {
+            await GuestCatalogSingleton.Instance.GetGuestsAsync();
+        }
 
-        
+
     }
 }

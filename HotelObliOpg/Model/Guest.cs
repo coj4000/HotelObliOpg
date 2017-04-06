@@ -22,5 +22,10 @@ namespace HotelObliOpg.Model
             this.Name = Name;
             this.Address = Address;
         }
+
+        public override string ToString()
+        {
+            return $"{Name}  -  {Address}  -  {Guest_No}";
+        }
     }
 }

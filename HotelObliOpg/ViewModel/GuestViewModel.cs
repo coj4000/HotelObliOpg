@@ -19,6 +19,8 @@ namespace HotelObliOpg.ViewModel
         public ICommand CreateGuestCommand { get; set; }
         public ICommand DeleteGuestCommand { get; set; }
         public ICommand UpdateGuestCommand { get; set; }
+        public ICommand GetGuestCommand { get; set; }
+        
 
     //    private RelayCommand getGuestCommand;
 
@@ -113,6 +115,8 @@ namespace HotelObliOpg.ViewModel
             CreateGuestCommand = new RelayCommand(gh.CreateGuest, null);
             DeleteGuestCommand = new RelayCommand(gh.DeleteGuest, CanDeleteGuest);          
             UpdateGuestCommand = new RelayCommand(gh.UpdateGuest, null);
+            GetGuestCommand = new RelayCommand(gh.GetGuest, null);
+            
 
          //   1GetGuestCommand = new RelayCommand(gh.LoadGuestsAsync, null);
             

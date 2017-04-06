@@ -62,6 +62,7 @@ namespace HotelObliOpg.Model
         // read
         public async Task GetGuestsAsync()
         { 
+            
             foreach (var item in await PersistencyService.GetGuestsAsync())
             {
                 this.GuestsCollection.Add(item);
