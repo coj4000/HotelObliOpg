@@ -135,12 +135,14 @@ namespace HotelObliOpg.Persistency
         {
             using (var client = new HttpClient())
             {
+                
                 client.BaseAddress = new Uri(serverUrl);
                 client.DefaultRequestHeaders.Clear();
-                string urlString = "api/guests/" + GuestUpdate.Guest_No.ToString();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                string urlStringUpdate = "api/guests/" + GuestUpdate.Guest_No.ToString();
                 try
                 {
-                    
+                    var response = client.PutAsJsonAsync<Guest>(urlStringUpdate, GuestUpdate).Result;
 
                 }
                 catch (Exception)
