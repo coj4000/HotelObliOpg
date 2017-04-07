@@ -73,9 +73,9 @@ namespace HotelObliOpg.Model
             
         
         //put
-        public void UpdateGuest(int guest_no, Guest newGuest)
+        public void UpdateGuest(Guest GUpdate)
         {
-            PersistencyService.UpdateGetGuest(guest_no, newGuest);
+            PersistencyService.UpdateGetGuest(GUpdate);
         }
 
         

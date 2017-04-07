@@ -8,6 +8,7 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="146,58,0,0" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Page>

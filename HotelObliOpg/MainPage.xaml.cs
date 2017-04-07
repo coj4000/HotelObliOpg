@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.ServiceModel;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -25,6 +26,13 @@ namespace HotelObliOpg
         public MainPage()
         {
             this.InitializeComponent();
+        }
+
+        private void Button2_OnClick(object sender, RoutedEventArgs e)
+        {
+            var item = listView.SelectedItem.ToString();
+            
+            this.Frame.Navigate(typeof(OpretGuest), item);
         }
     }
 }
