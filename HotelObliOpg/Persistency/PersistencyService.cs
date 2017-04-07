@@ -14,7 +14,7 @@ using System.Net.Http.Headers;
 
 namespace HotelObliOpg.Persistency
 {
-    class PersistencyService
+    public class PersistencyService
     {
 
         const string serverUrl = "http://localhost:36179/";
