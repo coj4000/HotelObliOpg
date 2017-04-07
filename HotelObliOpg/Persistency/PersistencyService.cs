@@ -20,32 +20,8 @@ namespace HotelObliOpg.Persistency
         const string serverUrl = "http://localhost:36179/";
 
 
-        //public static async Task<List<Guest>> GetAllGuestAsync()
-        //{
-        //    using (var client = new HttpClient())
-        //    {
-        //        client.BaseAddress = new Uri(serverUrl);
-        //        client.DefaultRequestHeaders.Clear();
-        //        string urlstring = "api/Guests";
-        //        try
-        //        {
-        //            var response = await client.GetAsync(urlstring);
-        //            if (response.IsSuccessStatusCode)
-        //            {
-        //                var guestList = await response.Content.ReadAsAsync<List<Guest>>();
-
-        //                return guestList;
-        //            }
-        //            return null;
-        //        }
-        //        catch (Exception e)
-        //        {
-        //            MessageDialog exception = new MessageDialog(e.Message);
-        //            return null;
-        //        }
-        //    }
-        //}
-
+        
+        // GET - henter guests fra backend
 
         public static async Task<ObservableCollection<Guest>> GetGuestsAsync()
         {
@@ -79,6 +55,7 @@ namespace HotelObliOpg.Persistency
 
         }
 
+        // Post - poster guest til db
         public static void CreateGuestAsync(Guest newGuests)
         {
             using (var client = new HttpClient())
@@ -108,7 +85,7 @@ namespace HotelObliOpg.Persistency
             }
 
         }
-
+        // Delete - Fjener guest fra db
         public static void DeleteGuestAsync(Guest GuestDelete)
         {
 
@@ -130,7 +107,7 @@ namespace HotelObliOpg.Persistency
 
             }
         }
-
+        // Put - updater guest i db
         public static void UpdateGetGuest(Guest GuestUpdate)
         {
             using (var client = new HttpClient())

@@ -15,7 +15,6 @@
         <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="231,528,0,0" VerticalAlignment="Top" Height="55" Width="566" Command="{Binding UpdateGuestCommand, Mode=TwoWay}"/>
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="231,392,0,0" TextWrapping="Wrap" Text="{Binding Address, Mode=TwoWay}" VerticalAlignment="Top" Height="24" Width="566" PlaceholderText="Adress"/>
         <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="231,276,0,0" TextWrapping="Wrap" Text="{Binding Name, Mode=TwoWay}" VerticalAlignment="Top" Height="15" Width="566" PlaceholderText="Name"/>
-        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Margin="231,145,0,0" TextWrapping="Wrap" Text="{Binding Guest_No, Mode=TwoWay}" VerticalAlignment="Top" Height="16" Width="566" PlaceholderText="Guest Number"/>
 
     </Grid>
 </Page>
