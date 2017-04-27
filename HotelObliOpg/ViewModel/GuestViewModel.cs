@@ -120,7 +120,7 @@ namespace HotelObliOpg.ViewModel
 
          //   1GetGuestCommand = new RelayCommand(gh.LoadGuestsAsync, null);
             
-            
+            //
             
         }
 
