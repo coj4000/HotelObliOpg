@@ -73,13 +73,13 @@ namespace HotelObliOpg.Model
             
         
         //put
-        public void UpdateGuest(Guest GUpdate)
-        {
+        //public void UpdateGuest(Guest GUpdate)
+        //{
             
-            PersistencyService.UpdateGetGuest(GUpdate);
+        //    PersistencyService.UpdateGetGuest(GUpdate);
             
             
-        }
+        //}
 
         
         

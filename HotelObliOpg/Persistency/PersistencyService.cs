@@ -1,4 +1,5 @@
-﻿    using System;
+﻿    
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -59,6 +60,15 @@ namespace HotelObliOpg.Persistency
                 string urlString = "api/guests";
                 try
                 {
+
+                }
+                catch (Exception)
+                {
+                    
+                    throw;
+                }
+                try
+                {
                     HttpResponseMessage response = await client.GetAsync(urlString);
                     if (response.IsSuccessStatusCode)
                     {
@@ -67,6 +77,9 @@ namespace HotelObliOpg.Persistency
 
                     }
                 }
+                
+        
+                
                 catch (Exception e)
                 {
                     MessageDialog exception = new MessageDialog(e.Message);
@@ -90,7 +103,7 @@ namespace HotelObliOpg.Persistency
 
                 try
                 {
-                    var createResponse = client.PostAsJsonAsync<Guest>(urlStringCreate, newGuests).Result;
+                    var createResponse = client.PostAsJsonAsync(urlStringCreate, newGuests).Result;
 
                     if (createResponse.IsSuccessStatusCode)
                     {
@@ -131,27 +144,27 @@ namespace HotelObliOpg.Persistency
             }
         }
 
-        public static void UpdateGetGuest(Guest GuestUpdate)
-        {
-            using (var client = new HttpClient())
-            {
+        //public static void UpdateGetGuest(Guest GuestUpdate)
+        //{
+        //    using (var client = new HttpClient())
+        //    {
                 
-                client.BaseAddress = new Uri(serverUrl);
-                client.DefaultRequestHeaders.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                string urlStringUpdate = "api/guests/" + GuestUpdate.Guest_No.ToString();
-                try
-                {
-                    var response = client.PutAsJsonAsync<Guest>(urlStringUpdate, GuestUpdate).Result;
+        //        client.BaseAddress = new Uri(serverUrl);
+        //        client.DefaultRequestHeaders.Clear();
+        //        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+        //        string urlStringUpdate = "api/guests/" + GuestUpdate.Guest_No.ToString();
+        //        try
+        //        {
+        //            var response = client.PutAsJsonAsync<Guest>(urlStringUpdate, GuestUpdate).Result;
 
-                }
-                catch (Exception)
-                {
+        //        }
+        //        catch (Exception)
+        //        {
                      
-                    throw;
-                }
-            }
-        }
+        //            throw;
+        //        }
+        //    }
+        //}
     }
 
 }

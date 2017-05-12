@@ -40,10 +40,10 @@ namespace HotelObliOpg.Handler
         }
 
         
-        public void UpdateGuest()
-        {
-            GuestCatalogSingleton.Instance.UpdateGuest(GuestViewModel.SelectedGuest);
-        }
+        //public void UpdateGuest()
+        //{
+        //    GuestCatalogSingleton.Instance.UpdateGuest(GuestViewModel.SelectedGuest);
+        //}
 
         public async void GetGuest()
         {
